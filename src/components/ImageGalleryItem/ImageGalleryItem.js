@@ -6,24 +6,22 @@ import css from "./ImageGalleryItem.module.css";
 class ImageGalleryItem extends Component {
   static propTypes = {
     onItemClick: PropTypes.func.isRequired,
-    id: PropTypes.number.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
     webformatURL: PropTypes.string.isRequired,
   };
 
-  modalContent = (id) => {
-    this.props.onItemClick(id);
-    console.log(id);
-    };
-    
+  modalContent = (largeImageURL) => {
+    this.props.onItemClick(largeImageURL);
+  };
 
   render() {
-    const { id, webformatURL } = this.props;
+    const { webformatURL, largeImageURL } = this.props;
     return (
       <img
         src={webformatURL}
         alt=""
         className={css.ImageGalleryItemImage}
-        onClick={() => this.modalContent(id)}
+        onClick={() => this.modalContent(largeImageURL)}
       />
     );
   }

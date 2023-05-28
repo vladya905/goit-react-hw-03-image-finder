@@ -10,6 +10,7 @@ class ImageGallery extends Component {
     images: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
+        largeImageURL: PropTypes.string.isRequired,
       })
     ).isRequired,
   };

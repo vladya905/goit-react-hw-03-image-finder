@@ -6,7 +6,7 @@ import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
 import Spinner from "../Loader/Loader";
 
-import fetchPictures from "../Fetch/FetchPictures";
+import fetchPictures from "../../Fetch/FetchPictures.js";
 
 import "./App.css";
 
@@ -65,11 +65,9 @@ class App extends Component {
   };
 
 
-    modalContentSet = (itemId) => {
-    const { visibleImages } = this.state;
-    const element = visibleImages.find(({ id }) => id === itemId);
-    this.setState({ modalContent: element.largeImageURL });
-  };
+  modalContentSet = (largeImageURL) => {
+  this.setState({ modalContent: largeImageURL });
+};
 
   handleNextPage = () => {
     this.setState(({ page }) => {

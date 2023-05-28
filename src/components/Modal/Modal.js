@@ -32,7 +32,6 @@ class Modal extends Component {
 
   render() {
     const { content } = this.props;
-    console.log(content);
     return (
       <div className={css.Overlay} onClick={this.handleBackdropClick}>
         <div className={css.Modal}>
